@@ -1,5 +1,22 @@
-<img class="text-centered" src="https://ih1.redbubble.net/image.174587692.6037/flat,800x800,070,f.u8.jpg" alt="A picture of a burger"/>
-<h1>Eat-Da-Burger!</h1>
-    <form action="/burgers/create" class="form-control" name="burgerName" value="" id="enterText" />
-    <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
-</form>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center" id="header">
+            <img src="https://ih1.redbubble.net/image.174587692.6037/flat,800x800,070,f.u8.jpg" alt="A picture of a burger"/>
+            <h1>Eat-Da-Burger!</h1>
+        </div>
+        <div id="burgerList">
+            {{#each burger}}
+                {{#unless this.devoured}}
+                <div class="col-lg-9 text-center">
+                    {{this.burger_name}}
+                </div>
+                {{/unless}}
+            {{/each}}
+        </div>
+        <div>
+            <form action="/burgers/create" class="form-control" name="burgerName" value="" id="enterText" />
+            <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
