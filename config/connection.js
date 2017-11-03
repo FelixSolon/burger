@@ -5,7 +5,7 @@ var connection;
 if(process.env.JAWSDB_URL){
     connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
-    MySQLPassword =  = require("../keys.js");
+    MySQLPassword = require("../keys.js");
     connection = mysql.createConnection({
     host: "localhost",
     user: "root",
