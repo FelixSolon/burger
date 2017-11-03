@@ -7,8 +7,8 @@ var burger = {
             callback(res);
         });
     },
-    insert: function(name, callback){
-        orm.insertOne("burgers", ["burger_name", "devoured"], [name, false], callback);
+    create: function(name, callback){
+        orm.insertOne("burgers", name, callback);
     },
     update: function(id, callback){
         var condition = "id=" + id;

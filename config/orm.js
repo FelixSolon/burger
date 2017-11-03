@@ -32,14 +32,8 @@ var orm = {
             callback(result);
         });
     },
-    insertOne: function(table, columns, values, callback){
-        var queryString = "INSERT INTO " + table;
-        queryString += " (";
-        queryString += columns.toString();
-        queryString += ") VALUES (";
-        queryString += printQuestionMarks(values.length);
-        queryString += ");"
-        connection.query(queryString, values, function(err, result){
+    insertOne: function(table, values, callback){
+        connection.query("INSERT INTO " + table + " (burger_name) VALUES('" + values + "');", function(err, result){
             if(err){
                 throw err;
             }
